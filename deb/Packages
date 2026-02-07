@@ -12,3 +12,19 @@ Section: utils
 Priority: optional
 Description: Wemo Ops Center - Automation and Provisioning Tool
 
+Package: wemo-ops-server
+Version: 1.0.1
+Architecture: amd64
+Maintainer: Quentin Russell <qrussell@example.com>
+Depends: python3
+Filename: ./wemo-ops-server_1.0.1_amd64.deb
+Size: 1879938
+MD5sum: 7d879d30d88f5ee81f9f7f82486dadfe
+SHA1: b4c2b2f1a8932196906f72851bfe8a332c778d0b
+SHA256: 8268da0543593c6bc7bfaff82e08e9111dac1cc3aad8da8cfc9449ac3a40330d
+Section: utils
+Priority: optional
+Description: Headless Wemo Automation Server with Web UI
+ A headless server to manage Belkin Wemo devices via a Web UI.
+ Includes automated scheduling and device discovery.
+
