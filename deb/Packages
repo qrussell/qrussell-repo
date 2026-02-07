@@ -1,0 +1,14 @@
+Package: wemo-ops
+Version: 4.2.6
+Architecture: amd64
+Maintainer: Quentin Russell <quentin@quentinrussell.com>
+Depends: python3, python3-tk, xclip, fonts-liberation, fonts-noto, fontconfig
+Filename: ./WemoOps_4.2.6_amd64.deb
+Size: 62362878
+MD5sum: c01a2a0cd6223d432e86399ffe839128
+SHA1: 292df890b5c9a5f17485dc4d6cf162583f2e4193
+SHA256: 178afb86d2d1594410225b5c925eef2373ce777fceb5704e2cf809cab61a5ee6
+Section: utils
+Priority: optional
+Description: Wemo Ops Center - Automation and Provisioning Tool
+
