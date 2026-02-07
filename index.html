@@ -204,6 +204,94 @@ sudo apt install wemo-ops</code></pre>
         event.currentTarget.classList.add("active");
     }
 </script>
+<style>
+    .comparison-wrapper {
+        overflow-x: auto; /* Makes table scrollable on mobile */
+        margin-bottom: 50px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--card-bg);
+    }
+    .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        color: #e2e8f0;
+    }
+    .comparison-table th {
+        background: #0f172a;
+        padding: 15px;
+        text-align: left;
+        border-bottom: 2px solid var(--border);
+        color: var(--accent);
+        font-size: 1.1rem;
+    }
+    .comparison-table td {
+        padding: 15px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+    }
+    .comparison-table tr:last-child td {
+        border-bottom: none;
+    }
+    .feature-col { font-weight: bold; color: #94a3b8; width: 20%; }
+    .desktop-col { width: 40%; }
+    .server-col { width: 40%; }
+    
+    /* Highlight the recommended badges */
+    .badge {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        margin-left: 8px;
+        text-transform: uppercase;
+    }
+    .badge-blue { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid #38bdf8; }
+    .badge-orange { background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid #f59e0b; }
+</style>
 
+<section>
+    <h2 style="border-bottom:1px solid var(--border); padding-bottom:10px; margin-bottom:20px;">🚀 Choose Your Edition</h2>
+    
+    <div class="comparison-wrapper">
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th class="feature-col">Feature</th>
+                    <th class="desktop-col">Desktop App <span class="badge badge-blue">GUI</span></th>
+                    <th class="server-col">Server App <span class="badge badge-orange">Headless</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="feature-col">Best For</td>
+                    <td>Casual users, quick toggling, and initial setup.</td>
+                    <td>Power users, Home Labs, and 24/7 automation.</td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Interface</td>
+                    <td>Native Window (Tkinter)</td>
+                    <td>Web Dashboard (Browser-based)</td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Running State</td>
+                    <td>Runs only when you open it.</td>
+                    <td>Runs 24/7 in the background (Systemd).</td>
+                </tr>
+                <tr>
+                    <td class="feature-col">OS Support</td>
+                    <td>Linux (Fedora/Ubuntu), Windows</td>
+                    <td>Linux Server, Raspberry Pi, Docker, VM</td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Key Benefit</td>
+                    <td><strong>Zero Setup.</strong> Just launch and click.</td>
+                    <td><strong>Set & Forget.</strong> Automation never stops.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
 </body>
 </html>
