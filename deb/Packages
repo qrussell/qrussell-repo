@@ -4,10 +4,10 @@ Architecture: amd64
 Maintainer: Quentin Russell <quentin@quentinrussell.com>
 Depends: python3, python3-tk, xclip, fonts-liberation, fonts-noto, fontconfig
 Filename: ./WemoOps_4.2.6_amd64.deb
-Size: 62362878
-MD5sum: c01a2a0cd6223d432e86399ffe839128
-SHA1: 292df890b5c9a5f17485dc4d6cf162583f2e4193
-SHA256: 178afb86d2d1594410225b5c925eef2373ce777fceb5704e2cf809cab61a5ee6
+Size: 62364218
+MD5sum: f9de7eda2ca731a0d3901bbafcb216e0
+SHA1: aee672302bcf092dfe1c16e024dedb6600de02d2
+SHA256: 89bf3821eb1d5a4d65ddef4f8990401d4eb9ceada4a3da5314e4874d7478fdf3
 Section: utils
 Priority: optional
 Description: Wemo Ops Center - Automation and Provisioning Tool
