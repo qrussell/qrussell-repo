@@ -1,5 +1,5 @@
 [qrussell-tools]
 name=Quentin Russell's Tools
-baseurl=https://qrussell.github.io/linux-repo/rpm/
+baseurl=https://qrussell.github.io/qrussell-repo/rpm/
 enabled=1
 gpgcheck=0
