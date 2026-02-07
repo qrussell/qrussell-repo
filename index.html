@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRussell Repositories</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f1f5f9;
+            --accent: #38bdf8;
+            --code-bg: #000000;
+            --border: #334155;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            text-align: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+        h1 { font-size: 2.5rem; margin: 0; background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p.subtitle { color: #94a3b8; font-size: 1.2rem; margin-top: 10px; }
+        
+        .setup-guide {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 50px;
+        }
+        .tabs { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            color: #94a3b8;
+            font-weight: bold;
+        }
+        .tab.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        pre {
+            background: var(--code-bg);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #333;
+            position: relative;
+        }
+        code { font-family: 'Consolas', 'Monaco', monospace; color: #a5d6ff; }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .card h3 { margin-top: 0; font-size: 1.5rem; }
+        .tag { 
+            display: inline-block; 
+            background: #334155; 
+            padding: 2px 8px; 
+            border-radius: 4px; 
+            font-size: 0.8rem; 
+            margin-right: 5px; 
+            color: #e2e8f0;
+        }
+        .tag.gui { background: #0ea5e9; color: white; }
+        .tag.cli { background: #f59e0b; color: black; }
+        
+        .install-cmd {
+            background: #000;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: monospace;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #4ade80;
+            border: 1px solid #333;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>QRussell Repositories</h1>
+        <p class="subtitle">Open source tools for Home Automation & System Administration</p>
+    </header>
+
+    <section class="setup-guide">
+        <h2 style="margin-top:0;">🚀 Quick Setup</h2>
+        <p style="color:#94a3b8;">Add this repository to your system to install and update packages automatically.</p>
+        
+        <div class="tabs">
+            <div class="tab active" onclick="openTab('rpm')">RedHat / Rocky / Fedora</div>
+            <div class="tab" onclick="openTab('deb')">Ubuntu / Debian</div>
+        </div>
+
+        <div id="rpm" class="tab-content active">
+            <p><strong>1. Add the Repository:</strong></p>
+            <pre><code>sudo dnf config-manager --add-repo https://qrussell.github.io/qrussell-repo/qrussell.repo</code></pre>
+            <p><strong>2. Install a Package:</strong></p>
+            <pre><code>sudo dnf install wemo-ops</code></pre>
+        </div>
+
+        <div id="deb" class="tab-content">
+            <p><strong>1. Add the Repository:</strong></p>
+            <pre><code>echo "deb [trusted=yes] https://qrussell.github.io/qrussell-repo/deb ./" | sudo tee /etc/apt/sources.list.d/qrussell.list</code></pre>
+            <p><strong>2. Update & Install:</strong></p>
+            <pre><code>sudo apt update
+sudo apt install wemo-ops</code></pre>
+        </div>
+    </section>
+
+    <h2 style="border-bottom:1px solid var(--border); padding-bottom:10px;">📦 Available Packages</h2>
+    <div class="projects-grid">
+
+        <div class="card">
+            <div style="margin-bottom:10px;">
+                <span class="tag gui">Desktop GUI</span>
+                <span class="tag">Python</span>
+            </div>
+            <h3>Wemo Ops Center</h3>
+            <p>A full-featured desktop application to manage, provision, and automate Belkin Wemo devices locally. No cloud required.</p>
+            <div class="install-cmd">
+                sudo dnf install wemo-ops
+            </div>
+        </div>
+
+        <div class="card">
+            <div style="margin-bottom:10px;">
+                <span class="tag cli">Headless Server</span>
+                <span class="tag">Web UI</span>
+            </div>
+            <h3>Wemo Ops Server</h3>
+            <p>A lightweight, headless service with a Web Dashboard. Designed for servers, Raspberry Pis, and VMs to run automation 24/7.</p>
+            <div class="install-cmd">
+                sudo dnf install wemo-ops-server
+            </div>
+        </div>
+
+        </div>
+
+    <footer>
+        <p>Maintained by <a href="https://github.com/qrussell">@qrussell</a> on GitHub.</p>
+        <p>Looking for source code? Visit the <a href="https://github.com/qrussell/wemo-ops-center">Wemo Ops Center Repo</a>.</p>
+    </footer>
+</div>
+
+<script>
+    function openTab(tabName) {
+        // Hide all tab content
+        var contents = document.getElementsByClassName("tab-content");
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].classList.remove("active");
+        }
+        // Deactivate all tab buttons
+        var tabs = document.getElementsByClassName("tab");
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove("active");
+        }
+        // Activate selected
+        document.getElementById(tabName).classList.add("active");
+        
+        // Highlight the button
+        // Simple logic to find which button was clicked based on text is tricky without ID, 
+        // so we just loop through buttons and check the onclick attribute or index.
+        // For simplicity in this static page, we use hardcoded indices or event.target
+        event.currentTarget.classList.add("active");
+    }
+</script>
+
+</body>
+</html>
