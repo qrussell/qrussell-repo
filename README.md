@@ -8,6 +8,7 @@ sudo dnf config-manager --add-repo https://qrussell.github.io/qrussell-repo/qrus
 ```
 ### 2. Install
 ```bash
+sudo dnf install wemo-ops
 sudo dnf install wemo-ops-server
 ```
 ## On Ubuntu / Debian (DEB)
@@ -24,5 +25,6 @@ sudo apt update
 ```
 ### 3. Install
 ```bash
+sudo apt install wemo-ops
 sudo apt install wemo-ops-server
 ```
