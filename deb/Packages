@@ -1,16 +1,19 @@
 Package: wemo-ops
-Version: 4.2.6
+Version: 5.1.6
 Architecture: amd64
 Maintainer: Quentin Russell <quentin@quentinrussell.com>
-Depends: python3, python3-tk, xclip, fonts-liberation, fonts-noto, fontconfig
-Filename: ./WemoOps_4.2.6_amd64.deb
-Size: 62364218
-MD5sum: f9de7eda2ca731a0d3901bbafcb216e0
-SHA1: aee672302bcf092dfe1c16e024dedb6600de02d2
-SHA256: 89bf3821eb1d5a4d65ddef4f8990401d4eb9ceada4a3da5314e4874d7478fdf3
+Installed-Size: 57184
+Depends: python3, python3-tk, fontconfig
+Filename: ./wemo-ops_5.1.6_amd64.deb
+Size: 57612954
+MD5sum: ab41e7f2b3aaf4f88489df879c15548a
+SHA1: 5847fa85b0708c9a227b27a9f1274d7816c343fe
+SHA256: 91b49a9dad6d7a59ef4f8ab4dc2911bbafca8068e8d57e2df53f6bae9b15d4d3
 Section: utils
 Priority: optional
-Description: Wemo Ops Center - Automation and Provisioning Tool
+Description: Wemo Ops Center - Automation Server and Client
+ Wemo Ops is a complete automation suite for Belkin Wemo devices.
+ Includes background server and desktop dashboard.
 
 Package: wemo-ops-server
 Version: 1.0.1
