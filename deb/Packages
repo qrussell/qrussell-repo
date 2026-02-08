@@ -15,15 +15,15 @@ Description: Wemo Ops Center - Automation Server and Client
  Wemo Ops is a complete automation suite for Belkin Wemo devices.
 
 Package: wemo-ops-server
-Version: 1.0.1
+Version: 1.0.2
 Architecture: amd64
 Maintainer: Quentin Russell <qrussell@example.com>
 Depends: python3
-Filename: ./wemo-ops-server_1.0.1_amd64.deb
-Size: 1879938
-MD5sum: 7d879d30d88f5ee81f9f7f82486dadfe
-SHA1: b4c2b2f1a8932196906f72851bfe8a332c778d0b
-SHA256: 8268da0543593c6bc7bfaff82e08e9111dac1cc3aad8da8cfc9449ac3a40330d
+Filename: ./wemo-ops-server_1.0.2_amd64.deb
+Size: 1879810
+MD5sum: cef38fa3d0806702cdd866dabdc63865
+SHA1: 4dfa89f5b30ca8fa81bd5628d988f11cdc7dbc33
+SHA256: 386b5ba514f8c5b5a1157084428fd87a2c70a0e7d370261a9d1d644bac9ee53a
 Section: utils
 Priority: optional
 Description: Headless Wemo Automation Server with Web UI
