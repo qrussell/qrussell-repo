@@ -2,13 +2,13 @@ Package: wemo-ops
 Version: 5.1.6
 Architecture: amd64
 Maintainer: Quentin Russell <quentin@quentinrussell.com>
-Installed-Size: 57184
+Installed-Size: 57188
 Depends: python3, python3-tk, fontconfig
 Filename: ./wemo-ops_5.1.6_amd64.deb
-Size: 57612846
-MD5sum: 5708fc316fbe10364976c415422feb01
-SHA1: 9e8bf1ee9930affc19b2df9a33d358ff726613f9
-SHA256: 6c354f4eaf02fd30077366bd33035e7cf6d44319816525ae4d4d22fde1545333
+Size: 57611500
+MD5sum: bf838d48c2c2daf9f50b72da1cc32350
+SHA1: 6c59791ebd06d7914a760d24a153b54d5123b917
+SHA256: 1d11305c10a4333801cd5453e4580a632f0b27c9c8d3b25e64905fcada813124
 Section: utils
 Priority: optional
 Description: Wemo Ops Center - Automation Server and Client
