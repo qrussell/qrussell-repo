@@ -4,7 +4,7 @@ This is a repository for projects published by qrussell on github.
 # Wemo Ops Center Latest
 ## On Fedora / Rocky Linux (RPM) Desktop App + Server
 
-### Option: 1
+## Option: 1
 ### 1. Add the repo
 ```bash
 sudo dnf config-manager --add-repo https://qrussell.github.io/qrussell-repo/qrussell.repo
@@ -14,7 +14,7 @@ sudo dnf config-manager --add-repo https://qrussell.github.io/qrussell-repo/qrus
 sudo dnf install wemo-ops
 ```
 
-### Option: 2
+## Option: 2
 ### 1. Manually add the repo
 ```bash
 sudo tee /etc/yum.repos.d/qrussell.repo <<EOF
