@@ -35,11 +35,11 @@ Version: 1.0
 Architecture: all
 Maintainer: Quentin Russell <you@example.com>
 Depends: python3, python3-venv
-Filename: ./wordpanel-1.0.deb
-Size: 11400
-MD5sum: 027edc9238947743746223269f04efa7
-SHA1: 08eb93b14073b1635c1dec3238c5209f2c61410d
-SHA256: cb6c1f9b6d18449b3ebc6ea840aebfac8f61ff887ee0f6f9d68c15535521c34c
+Filename: ./wordops-panel-1.0.deb
+Size: 13860
+MD5sum: 317250b1546efbecbd588e1865032612
+SHA1: 436fccd56cd5da6f699527f521d1b043b856fda4
+SHA256: 48da1c45d1ac342efc3d21ac4b705a661475408a2629cf877bd998b8c65761e1
 Section: web
 Priority: optional
 Description: A lightweight GUI for WordOps
