@@ -30,6 +30,22 @@ Description: Headless Wemo Automation Server with Web UI
  A headless server to manage Belkin Wemo devices via a Web UI.
  Includes automated scheduling and device discovery.
 
+Package: wordops-panel
+Version: 1.0-3
+Architecture: all
+Maintainer: Quentin Russell <you@example.com>
+Depends: python3, python3-venv
+Filename: ./wordops-panel_1.0-3_all.deb
+Size: 15078
+MD5sum: 9bf73982209b3a430484b1c6a4fcb22d
+SHA1: f769065a432aad21ce2c35bfbbe7bf01414eb62f
+SHA256: cf6f1f94d8725384bdd0940be987515baa6bb6f3b320fb23d472d72b122bd1ab
+Section: web
+Priority: optional
+Description: A lightweight GUI control panel for WordOps
+ WordOps Panel provides a web interface for managing WordOps sites,
+ auto-logins, and server status.
+
 Package: wordpanel
 Version: 1.0
 Architecture: all
