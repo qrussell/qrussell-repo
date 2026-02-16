@@ -31,15 +31,15 @@ Description: Headless Wemo Automation Server with Web UI
  Includes automated scheduling and device discovery.
 
 Package: wordops-panel
-Version: 1.0-7
+Version: 1.0-8
 Architecture: all
 Maintainer: Quentin Russell <you@example.com>
 Depends: python3, python3-venv
-Filename: ./wordops-panel_1.0-7_all.deb
-Size: 14824
-MD5sum: 9dad23a1a4d989c6d94642dfe73fa0f4
-SHA1: 1d05be6ed4583de73f52e9aadfbfce935d9abacd
-SHA256: e2486ee3abe6441628c75a5a6ea81887db933924e560eb1816f33e33dd8e836d
+Filename: ./wordops-panel_1.0-8_all.deb
+Size: 15352
+MD5sum: f02dc1cdeea4e57f12f4707b72f57bef
+SHA1: 02899897faeb85cc60a5e9845885a9d423556981
+SHA256: f229c40e7358e25b8451d5c7e13a2cbd5132b590b039f8b86a10b24bf8940e93
 Section: web
 Priority: optional
 Description: A lightweight GUI control panel for WordOps
