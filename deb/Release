@@ -2,10 +2,10 @@ Label: QRussell Repo
 Archive: stable
 Component: main
 Architecture: amd64
-Date: Mon, 16 Feb 2026 01:44:25 +0000
+Date: Mon, 16 Feb 2026 02:13:47 +0000
 SHA256:
- cc697e628ea3933fa88111983897f1c552257ee87c1f721be83467b77e2cd5b7 2150 Packages
- c26ccf46b3a41393b440153aaee12ffe8d299390320c721dbb3493de231da0e9 972 Packages.gz
+ c36ca72de4e4a964be1263956e2696c9399a8fbfbc18385b87782969c1045bbb 2150 Packages
+ 5d30dd7c281d80bd511e93875736f25dc44dfb90252bcf55025f06934df747e8 972 Packages.gz
 MD5Sum:
- 8fee93e0c0c8f5e51d62f9d07e1d92ac 2150 Packages
- 3db571fe9b9f68566c4e3f442cd190c6 972 Packages.gz
+ 154218a242d86e1cabe34cd9196bb326 2150 Packages
+ b6b68ca91ea005f4ed8d0195832510bc 972 Packages.gz
