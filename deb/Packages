@@ -36,10 +36,10 @@ Architecture: all
 Maintainer: Quentin Russell <you@example.com>
 Depends: python3, python3-venv
 Filename: ./wordops-panel_1.0-8_all.deb
-Size: 13990
-MD5sum: db66642c3e856a317d1d451cab5d26a4
-SHA1: 53dbc003f168424515fe16bd3749adb2c684155b
-SHA256: a9603665ef87fd5c3508732f0849ee2f4a1f4c14cb4ccfe6775228c4169e8f4f
+Size: 14266
+MD5sum: d32fde49b6b5a479acfb57681e4153c4
+SHA1: 1f4e80d355196f10b3a6804ab3703f827b6679cb
+SHA256: c1c2d76d2c304253a8095027f5db0f19c4d52b2c56172ac0a904ff640d48fbdb
 Section: web
 Priority: optional
 Description: A lightweight GUI control panel for WordOps
