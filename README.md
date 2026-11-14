@@ -111,5 +111,9 @@ sudo apt install wemo-ops-server
   `./update_repo.sh "Add <package> <version>"` (Git Bash or Linux; uses Docker for the
   Linux-only tools when they aren't installed). It rebuilds the indexes, signs `InRelease` and
   `Release.gpg`, and asks before committing and pushing.
+- From PowerShell, use the wrapper instead (it runs the same script in Git Bash):
+  `.\update_repo.ps1 "Add <package> <version>"`. Leave double quotes out of the message.
+  If Windows refuses to run scripts, allow local ones once with
+  `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
 - The signing key's fingerprint is in `signing-key.fpr`. The private key stays on the
   maintainer's PC (`./new_signing_key.sh` created it); keep an offline backup and never commit it.
