@@ -1,0 +1,21 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Label: QRussell Repo
+Archive: stable
+Component: main
+Architecture: amd64
+Date: Sat, 14 Nov 2026 07:35:12 +0000
+SHA256:
+ 72fb5df5da84924a4ff3d9e26fc9326aabd1d2c27a34949e5aa0be6bc71a6bbf 3574 Packages
+ ebedaaf7a5ae5877e3e72ada103b9961d5dca275cd7fe483e6efbe96a9439358 1652 Packages.gz
+MD5Sum:
+ a33c8b42417713c25ccf0f91b42af8af 3574 Packages
+ fd1658ddcd46a12311295cf801d6c1f5 1652 Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQSZlKnrOes8EByUn7IBK6FOD+OjVQUCavgPMAAKCRABK6FOD+Oj
+VW58AP9ZTe0nBTLhSbmBxwF+Kc4MwFz4jU8n+eK63ULVwRbySgEAplE3zBZ/qHTr
+iTAexNCipJS16zUW521/1yeMv/cAnA4=
+=IBV4
+-----END PGP SIGNATURE-----

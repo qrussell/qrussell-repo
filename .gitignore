@@ -1,0 +1,3 @@
+# Private signing-key backups must never be committed
+*.private.asc
+*secret*.asc

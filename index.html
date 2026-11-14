@@ -139,8 +139,10 @@
         </div>
 
         <div id="deb" class="tab-content">
-            <p><strong>1. Add the Repository:</strong></p>
-            <pre><code>echo "deb [trusted=yes] https://qrussell.github.io/qrussell-repo/deb ./" | sudo tee /etc/apt/sources.list.d/qrussell.list</code></pre>
+            <p><strong>1. Add the signing key and the Repository:</strong></p>
+            <pre><code>sudo curl -fsSL https://qrussell.github.io/qrussell-repo/deb/qrussell-repo.gpg -o /usr/share/keyrings/qrussell-repo.gpg
+echo "deb [signed-by=/usr/share/keyrings/qrussell-repo.gpg] https://qrussell.github.io/qrussell-repo/deb ./" | sudo tee /etc/apt/sources.list.d/qrussell.list</code></pre>
+            <p style="color:#94a3b8;">Key fingerprint: <code>9994A9EB39EB3C101C949FB2012BA14E0FE3A355</code>. Added the repo earlier with <code>[trusted=yes]</code>? Run these two commands to switch to the signed setup.</p>
             <p><strong>2. Update & Install:</strong></p>
             <pre><code>sudo apt update
 sudo apt install wemo-ops</code></pre>
@@ -213,6 +215,18 @@ sudo apt install wemo-ops</code></pre>
             <p>A lightweight, headless service with a Web Dashboard. Designed for servers, Raspberry Pis, and VMs to run automation 24/7.</p>
             <div class="install-cmd">
                 sudo dnf install wemo-ops-server
+            </div>
+        </div>
+
+        <div class="card">
+            <div style="margin-bottom:10px;">
+                <span class="tag cli">Headless Server</span>
+                <span class="tag">Web UI</span>
+            </div>
+            <h3>RedstonePanel</h3>
+            <p>A web panel to install and manage Minecraft Java and Bedrock servers on Ubuntu 24.04 / 25.04: deploy, update, live chat, properties editor, player roles and templates. <a href="https://github.com/qrussell/redstonepanel">Source</a></p>
+            <div class="install-cmd">
+                sudo apt install redstonepanel
             </div>
         </div>
 

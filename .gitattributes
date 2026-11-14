@@ -1,0 +1,11 @@
+# Signed/hashed repository files must reach GitHub Pages byte-for-byte as generated
+deb/Packages      -text
+deb/Packages.gz   binary
+deb/Release       -text
+deb/InRelease     -text
+deb/Release.gpg   binary
+deb/*.gpg         binary
+deb/*.asc         -text
+*.deb             binary
+*.rpm             binary
+*.sh              text eol=lf
