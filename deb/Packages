@@ -1,15 +1,15 @@
 Package: redstonepanel
-Version: 1.1.0
+Version: 1.2.0
 Architecture: all
 Maintainer: Quentin Russell <quentin.russell@cielocloud.org>
-Installed-Size: 254
+Installed-Size: 260
 Depends: systemd | systemd-standalone-sysusers | systemd-sysusers, python3 (>= 3.12), python3-fastapi (>= 0.101), python3-starlette (>= 0.31), python3-uvicorn (>= 0.27), python3-python-multipart | python3-multipart (<< 1.0), libpam0g, openssl, curl, wget, jq, unzip, screen, sudo
-Recommends: openjdk-21-jre-headless, ufw
-Filename: ./redstonepanel_1.1.0_all.deb
-Size: 54794
-MD5sum: fd58eb8652530f2a3d244c78425a17b8
-SHA1: c7134978a4d90ddd755dc3b5205adf32bbc30fc5
-SHA256: 91a716d55786f6cdc7c9afc9c4ea192b352c3c606543db37203978b6ba6d6b62
+Recommends: openjdk-25-jre-headless, ufw
+Filename: ./redstonepanel_1.2.0_all.deb
+Size: 56370
+MD5sum: c2096618a30417936effd6cf4b5a47ff
+SHA1: d1369e04877edf4102f0090dd23db24ffd2bf375
+SHA256: 8408b59ab68ae63d4417ac52f0f213336c5886ad094d7f42faed8a2b09c031e9
 Section: admin
 Priority: optional
 Homepage: https://github.com/qrussell/redstonepanel
@@ -23,8 +23,8 @@ Description: web panel to install and manage Minecraft servers
  panel accounts managed in the panel. HTTPS and optional sign-in on the local
  network can be enabled by an admin in Panel Settings.
  .
- Java Edition servers need a Java runtime (recommended:
- openjdk-21-jre-headless); Bedrock-only hosts can skip it.
+ Java Edition servers need a Java runtime: current Minecraft releases need
+ Java 25 (openjdk-25-jre-headless, recommended). Bedrock-only hosts can skip it.
 
 Package: wemo-ops
 Version: 5.3.0-1
