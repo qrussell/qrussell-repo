@@ -5,6 +5,11 @@
       "repo": "qrussell/wemo-ops-center",
       "tag_pattern": "^v[0-9]+(\\.[0-9]+)*$",
       "keep": 2
+    },
+    {
+      "repo": "qrussell/redstonepanel",
+      "tag_pattern": "^v[0-9]+(\\.[0-9]+)*$",
+      "keep": 3
     }
   ]
 }
