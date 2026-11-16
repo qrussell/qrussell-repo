@@ -34,8 +34,11 @@ else
 fi
 
 echo "--- 2. DEB repo (Ubuntu/Debian) ---"
+# --multiversion keeps every .deb in the index. Without it dpkg-scanpackages keeps one
+# entry per package name, so an arm64 build of the same version as the amd64 one was
+# dropped and Raspberry Pis were offered the amd64 package.
 linux dpkg-scanpackages ubuntu:24.04 "apt-get update -qq && apt-get install -y -qq dpkg-dev" \
-      "cd deb && dpkg-scanpackages . /dev/null > Packages"
+      "cd deb && dpkg-scanpackages --multiversion . /dev/null > Packages"
 cd deb
 gzip -k -f -n Packages
 
