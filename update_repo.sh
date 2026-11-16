@@ -27,10 +27,14 @@ linux() {   # linux <tool> <docker image> <setup command> <command>
 }
 
 echo "--- 1. RPM repo (Fedora/Rocky) ---"
-if [ -d rpm ] && [ -n "$(git status --porcelain -- 'rpm/*.rpm')" ]; then
-    linux createrepo_c fedora:latest "dnf -y -q install createrepo_c" "createrepo_c --update rpm/"
-else
-    echo "No new or changed .rpm files; RPM index left as is."
+# Two indexes over the same rpm/ files:
+#   rpm/repodata  for baseurl=.../qrussell-repo/rpm/  (current instructions)
+#   repodata      for baseurl=.../qrussell-repo/      (older instructions; its entries
+#                 point into rpm/). Without this, machines set up the old way never
+#                 saw new versions. Both are rebuilt every run so they never drift.
+if [ -d rpm ]; then
+    linux createrepo_c fedora:latest "dnf -y -q install createrepo_c" \
+          "createrepo_c --update rpm/ && createrepo_c --update --excludes 'deb/*' ."
 fi
 
 echo "--- 2. DEB repo (Ubuntu/Debian) ---"
