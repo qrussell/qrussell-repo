@@ -1,0 +1,10 @@
+{
+  "_comment": "Projects whose GitHub release packages are published in this repository. The newest 'keep' published (non-draft, non-prerelease) releases whose tag matches 'tag_pattern' are included; their .deb/.rpm assets are downloaded at build time and never committed. Small packages can still be committed to deb/ and rpm/ directly.",
+  "sources": [
+    {
+      "repo": "qrussell/wemo-ops-center",
+      "tag_pattern": "^v[0-9]+(\\.[0-9]+)*$",
+      "keep": 2
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Runs update_repo.sh in Git Bash from PowerShell: rebuild the indexes, sign, publish.
+    Runs update_repo.sh in Git Bash from PowerShell: commit and push; GitHub Actions builds and deploys the site.
 
 .EXAMPLE
     .\update_repo.ps1 "Add redstonepanel 1.3.0"
@@ -8,7 +8,7 @@
 .DESCRIPTION
     update_repo.sh needs bash and GnuPG, which PowerShell doesn't have (typing ./update_repo.sh
     in PowerShell silently does nothing). This wrapper finds Git for Windows' bash and runs the
-    script in this console, so the passphrase and "push?" prompts appear here as usual.
+    script in this console, so the "push?" prompt appears here as usual.
     The message is passed as its own argument, so spaces work; avoid double quotes inside it
     (Windows PowerShell 5.1 can't pass them to other programs reliably).
 #>

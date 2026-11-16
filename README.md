@@ -107,13 +107,23 @@ sudo apt install wemo-ops-server
 ```
 
 # Maintainer notes
-- Add or replace `.deb` files in `deb/` (and `.rpm` files in `rpm/`), then run
-  `./update_repo.sh "Add <package> <version>"` (Git Bash or Linux; uses Docker for the
-  Linux-only tools when they aren't installed). It rebuilds the indexes, signs `InRelease` and
-  `Release.gpg`, and asks before committing and pushing.
-- From PowerShell, use the wrapper instead (it runs the same script in Git Bash):
-  `.\update_repo.ps1 "Add <package> <version>"`. Leave double quotes out of the message.
-  If Windows refuses to run scripts, allow local ones once with
-  `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
-- The signing key's fingerprint is in `signing-key.fpr`. The private key stays on the
-  maintainer's PC (`./new_signing_key.sh` created it); keep an offline backup and never commit it.
+The site is built and deployed by GitHub Actions
+(`.github/workflows/publish.yml` → `scripts/build_site.py`). It builds the apt index
+(signed) and the RPM indexes (`rpm/repodata`, plus the top-level `repodata` used by
+machines set up with `baseurl=.../qrussell-repo/`), then deploys to GitHub Pages.
+Indexes and release packages are never committed, so the git history doesn't grow.
+
+- **Release packages (large):** listed in `sources.json`. The newest `keep` published
+  releases of each project are downloaded at build time. A new release appears within
+  4 hours (scheduled check), or right away with *Actions → Publish repository → Run workflow*.
+  Lower `keep` if the build warns that the site is approaching GitHub Pages' 1 GB limit.
+- **Other packages (small):** copy the `.deb` into `deb/` or the `.rpm` into `rpm/`, then
+  `./update_repo.sh "Add <package> <version>"` (or `.\update_repo.ps1 "..."` from
+  PowerShell). It commits and pushes; the push triggers a new build.
+- **Local preview:** `PREVIEW=1 ./update_repo.sh` builds an unsigned copy of the site in
+  `_site/` (uses Docker when the Linux tools aren't installed).
+- **Signing key:** fingerprint in `signing-key.fpr`. CI signs with the private key stored in
+  the `github-pages` environment secrets `QRUSSELL_REPO_SIGNING_KEY` (armored private key)
+  and `QRUSSELL_REPO_SIGNING_PASSPHRASE`; only workflows on `main` can read them. Keep
+  an offline backup of the private key and never commit it. Users trust exactly this key,
+  so replacing it (or adding a subkey) requires every user to re-download the public key.

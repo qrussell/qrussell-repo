@@ -1,0 +1,96 @@
+name: Publish repository
+
+# Builds the apt/dnf repository (scripts/build_site.py) and deploys it to GitHub
+# Pages. Release packages are downloaded at build time, never committed.
+#
+# One-time setup (repository Settings):
+#   Pages -> Build and deployment -> Source: "GitHub Actions"
+#   Environments -> github-pages -> Environment secrets:
+#     QRUSSELL_REPO_SIGNING_KEY         armored private key (see README, Maintainer notes)
+#     QRUSSELL_REPO_SIGNING_PASSPHRASE  its passphrase
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # Picks up new releases of the projects in sources.json. Deploys only if the
+  # packages changed.
+  schedule:
+    - cron: '23 */4 * * *'
+  # Lets a project publish immediately after a release (optional)
+  repository_dispatch:
+    types: [release-published]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    # The signing key is an environment secret: only runs on main can use it
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq dpkg-dev createrepo-c gnupg
+
+      - name: Import signing key
+        env:
+          KEY: ${{ secrets.QRUSSELL_REPO_SIGNING_KEY }}
+        run: |
+          if [ -z "$KEY" ]; then echo "::error::Secret QRUSSELL_REPO_SIGNING_KEY is not set (see the workflow header)"; exit 1; fi
+          echo "$KEY" | gpg --batch --import
+          FPR=$(tr -d '[:space:]' < signing-key.fpr)
+          gpg --list-secret-keys "$FPR" >/dev/null || { echo "::error::Imported key does not match signing-key.fpr ($FPR)"; exit 1; }
+
+      - uses: actions/cache@v4
+        with:
+          path: .cache/release-assets
+          key: release-assets-${{ github.run_id }}
+          restore-keys: release-assets-
+
+      - name: Build site
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          QRUSSELL_REPO_PASSPHRASE: ${{ secrets.QRUSSELL_REPO_SIGNING_PASSPHRASE }}
+        run: python3 scripts/build_site.py
+
+      - name: Skip unchanged scheduled runs
+        id: changed
+        run: |
+          live=$(curl -fsSL "https://qrussell.github.io/qrussell-repo/manifest.txt" || true)
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$live" = "$(cat _site/manifest.txt)" ]; then
+            echo "No package changes since the last deploy; skipping."
+            echo "deploy=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "deploy=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.changed.outputs.deploy == 'true'
+        with:
+          path: _site
+
+      - uses: actions/deploy-pages@v4
+        if: steps.changed.outputs.deploy == 'true'
+        id: deploy
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## Repository build"
+            echo '```'
+            ls -1 _site/deb/*.deb _site/rpm/*.rpm 2>/dev/null | sed 's|_site/||'
+            echo '```'
+            echo "Deployed: ${{ steps.changed.outputs.deploy }}"
+          } >> "$GITHUB_STEP_SUMMARY"
